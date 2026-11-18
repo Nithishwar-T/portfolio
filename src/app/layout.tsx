@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Nithishwar T — Full Stack Developer",
     description: "Portfolio of Nithishwar T, Full Stack Developer based in Chennai, India.",
     type: "website",
-    images: ["/og-image.png"],
+    twitter: { card: "summary_large_image" },
   },
 };
 

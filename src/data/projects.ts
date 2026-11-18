@@ -8,12 +8,13 @@ export type Project = {
   stack: string[];
   features: string[];
   built: string[];
-  github: string;
+  github?: string;
   liveUrl?: string;                          // add when deployed; hidden if empty
   problem?: string;                          // optional sections render only if filled
   solution?: string;
   challenges?: string;
   screenshots?: { src: string; alt: string }[]; // put images in public/projects/
+  
 };
 
 export const projects: Project[] = [
@@ -86,6 +87,49 @@ export const projects: Project[] = [
       "Deployed the backend on Render with environment-based configuration for multiple environments.",
     ],
     github: "https://github.com/Nithishwar-T/Forms",
+  },  {
+    slug: "ai-crime-mapper",
+    title: "AI Crime Mapper",
+    subtitle: "NLP search and geospatial crime mapping",
+    date: "Nov 2025",
+    summary:
+      "An AI-powered crime mapping web app with NLP-based search and geospatial data filtering, built on a FastAPI backend with MongoDB.",
+    role: "Full stack design and development",
+    stack: ["Next.js", "FastAPI", "MongoDB", "React.js", "WebAuthn"],
+    features: [
+      "NLP-based search",
+      "Geospatial data filtering",
+      "Interactive map-based React frontend",
+      "Biometric fingerprint login using WebAuthn",
+    ],
+    built: [
+      "Designed the AI-powered crime mapping web app with NLP-based search and geospatial data filtering.",
+      "Built a FastAPI backend integrated with MongoDB for secure, efficient data retrieval.",
+      "Implemented biometric fingerprint login using WebAuthn and an interactive map-based React frontend.",
+    ],
+    // github: "https://github.com/Nithishwar-T/REPO-NAME",  // add when you have the link
+  },
+  {
+    slug: "smart-task-workflow-management",
+    title: "Smart Task & Workflow Management System",
+    subtitle: "Responsive task dashboard in React",
+    date: "Jun 2024",
+    summary:
+      "A responsive task management dashboard with dynamic task creation, status updates and completion tracking.",
+    role: "Frontend development",
+    stack: ["React.js", "JavaScript", "HTML5", "CSS3"],
+    features: [
+      "Dynamic task creation",
+      "Status updates and completion tracking",
+      "Real-time UI updates without page refresh",
+      "CSS animations and a responsive layout",
+    ],
+    built: [
+      "Developed a responsive task management dashboard with dynamic task creation, status updates and completion tracking.",
+      "Used React state management for real-time UI updates without page refresh.",
+      "Applied CSS animations and responsive layout principles for an intuitive UX.",
+    ],
+    // github: "https://github.com/Nithishwar-T/REPO-NAME",
   },
 ];
 

@@ -3,6 +3,7 @@ import { FaCss3Alt, FaHtml5, FaJava } from "react-icons/fa6";
 import {
   SiAngular,
   SiDotnet,
+  SiFastapi,
   SiExpress,
   SiGit,
   SiGithub,
@@ -50,6 +51,8 @@ export const skillGroups: { title: string; items: Skill[] }[] = [
       { name: "Express.js", icon: SiExpress },
       { name: "REST APIs" },
       { name: "JWT Authentication", icon: SiJsonwebtokens },
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "OAuth" },
     ],
   },
   {
