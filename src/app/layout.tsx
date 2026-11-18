@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter_Tight, Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
 const sans = Inter_Tight({ subsets: ["latin"], variable: "--font-inter-tight", display: "swap" });
 const serif = Instrument_Serif({
@@ -34,7 +36,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body>{children}</body>
+            <body>
+        <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded focus:bg-accent focus:px-3 focus:py-2 focus:text-bg">
+          Skip to content
+        </a>
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
