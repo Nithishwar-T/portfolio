@@ -15,7 +15,7 @@ export function Contact() {
   ];
   return (
     <section id="contact" className="mx-auto max-w-6xl px-6 py-24">
-      <SectionHeading index="09" title="Contact" />
+      <SectionHeading index="08" title="Contact" />
       <div className="grid gap-16 md:grid-cols-2">
         <Reveal>
           <p className="font-serif text-5xl italic leading-tight sm:text-6xl">

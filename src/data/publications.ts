@@ -28,7 +28,7 @@ export const publications: Publication[] = [
     summary:
       "A web application that lets investigators search crime records in natural language. It uses named entity recognition and fuzzy matching to link suspects, locations and methods of operation, and is designed for offline, on-premise deployment with React, FastAPI and MongoDB.",
     // Uncomment after copying your ICECONF certificate PDF to public/certificates/iceconf-2025-presentation.pdf
-    // links: [{ label: "Presentation certificate", href: "/certificates/iceconf-2025-presentation.pdf" }],
+       links: [{ label: "Presentation certificate", href: "/certificates/iceconf-2025-presentation.jpg" }]
     // url: "https://...",  // add the IEEE Xplore / DOI link when you have it
   },
 ];
