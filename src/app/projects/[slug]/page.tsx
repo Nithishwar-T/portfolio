@@ -10,6 +10,8 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export const instant = false;
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
