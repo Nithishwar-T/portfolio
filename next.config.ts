@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   cacheComponents: true,
+  devIndicators: false,
   partialPrefetching: true,
   turbopack: {
     root: process.cwd(),
@@ -12,6 +13,7 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+    
   },
 };
 

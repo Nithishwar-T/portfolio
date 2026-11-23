@@ -35,28 +35,15 @@ const siteUrl =
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-
-  title: {
-    default: "Nithishwar T — Full Stack Developer",
-    template: "%s — Nithishwar T",
-  },
-
+  title: { default: "Nithishwar T — Full Stack Developer", template: "%s — Nithishwar T" },
   description:
     "Full Stack Developer building enterprise web applications with Angular, ASP.NET Core, React and SQL.",
-
   openGraph: {
     title: "Nithishwar T — Full Stack Developer",
-    description:
-      "Portfolio of Nithishwar T, Full Stack Developer based in Chennai, India.",
+    description: "Portfolio of Nithishwar T, Full Stack Developer based in Chennai, India.",
     type: "website",
   },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Nithishwar T — Full Stack Developer",
-    description:
-      "Portfolio of Nithishwar T, Full Stack Developer based in Chennai, India.",
-  },
+  twitter: { card: "summary_large_image" },
 };
 
 // Initialize the saved theme before the first paint.
@@ -83,7 +70,7 @@ export default function RootLayout({
       className={`${sans.variable} ${serif.variable} ${mono.variable}`}
       data-scroll-behavior="smooth"
     >
-      <head>
+      <head>  
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
