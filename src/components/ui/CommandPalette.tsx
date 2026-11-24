@@ -54,6 +54,7 @@ export function CommandPalette() {
     { id: "education", label: "Education", hint: "B.Tech IT", group: "Go to", run: goTo("education") },
     { id: "publications", label: "Publications", hint: "Research papers", group: "Go to", run: goTo("publications") },
     { id: "certifications", label: "Certifications", hint: "Certificates", group: "Go to", run: goTo("certifications") },
+    { id: "beyond", label: "Beyond Code", hint: "Events & community", group: "Go to", run: goTo("#beyond-code") },
     { id: "contact", label: "Contact", hint: "Send a message", group: "Go to", run: goTo("contact") },
 
     ...projects.map((p) => ({

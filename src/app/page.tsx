@@ -6,11 +6,15 @@ import { Experience, Education } from "@/components/sections/Experience";
 import { Publications } from "@/components/sections/Publications";
 import { Certifications } from "@/components/sections/Certifications";
 import { Contact } from "@/components/sections/Contact";
+import { QuickFacts } from "@/components/sections/QuickFacts";
+import { BeyondCode } from "@/components/sections/BeyondCode";
+import { GithubActivity } from "@/components/sections/GithubActivity";
 
 export default function Home() {
   return (
     <main id="main">
       <Hero />
+      <QuickFacts />
       <About />
       <Skills />
       <Projects />
@@ -18,6 +22,8 @@ export default function Home() {
       <Education />
       <Publications />
       <Certifications />
+       <BeyondCode />
+      <GithubActivity />
       <Contact />
     </main>
   );

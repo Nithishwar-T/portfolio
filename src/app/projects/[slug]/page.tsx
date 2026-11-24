@@ -7,6 +7,7 @@ import { FaGithub } from "react-icons/fa6";
 import { projects, getProject } from "@/data/projects";
 import { ArchitectureExplorer } from "@/components/ui/ArchitectureExplorer";
 
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
