@@ -10,6 +10,9 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { CommandPalette } from "@/components/ui/CommandPalette";
+import { Analytics } from "@vercel/analytics/next";
+import { profile } from "@/data/profile";
+
 
 const sans = Inter_Tight({
   subsets: ["latin"],
@@ -33,6 +36,17 @@ const mono = JetBrains_Mono({
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
+  const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.title,
+  url: siteUrl,
+  address: { "@type": "PostalAddress", addressLocality: "Chennai", addressCountry: "IN" },
+  alumniOf: { "@type": "CollegeOrUniversity", name: "St. Joseph's Institute of Technology" },
+  sameAs: [profile.github, profile.linkedin],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -73,6 +87,10 @@ export default function RootLayout({
     >
       <head>  
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+                <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replace(/</g, "\\u003c") }}
+        />
       </head>
       <body>
         <a
@@ -86,6 +104,7 @@ export default function RootLayout({
          <CommandPalette />
         {children}
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

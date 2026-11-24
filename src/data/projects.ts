@@ -14,6 +14,7 @@ export type Project = {
   solution?: string;
   challenges?: string;
   screenshots?: { src: string; alt: string }[]; // put images in public/projects/
+    architecture?: { label: string; detail: string }[]; // renders the clickable architecture diagram
   
 };
 
@@ -40,6 +41,11 @@ export const projects: Project[] = [
       "Implemented JWT authentication with refresh tokens and mitigated IDOR risks through ownership-based authorization checks.",
     ],
     github: "https://github.com/Nithishwar-T/Travel-Itinerary-Planner-App",
+        architecture: [
+      { label: "Angular", detail: "Components for itinerary creation and destination management." },
+      { label: "ASP.NET Core Web API", detail: "Secured API with JWT authentication, refresh token support and ownership-based authorization checks that mitigate IDOR risks." },
+      { label: "SQL Server", detail: "Entity models for trips, collaborators and destinations, supporting ordered, multi-day itineraries." },
+    ],
   },
   {
     slug: "smartbus",
@@ -64,6 +70,11 @@ export const projects: Project[] = [
       "Secured REST API endpoints with JWT authentication, enforcing role-based authorization across user types.",
     ],
     github: "https://github.com/Nithishwar-T/BusBookingApp",
+        architecture: [
+      { label: "Angular + Tailwind CSS", detail: "The passenger and admin interface: bus search, seat selection, ticket booking, booking history and invoice generation." },
+      { label: "ASP.NET Core Web API", detail: "REST endpoints secured with JWT authentication, enforcing role-based authorization for passengers and administrators." },
+      { label: "SQL Server", detail: "Relational storage for the booking data." },
+    ],
   },
   {
     slug: "mern-form-submission-system",
@@ -87,6 +98,11 @@ export const projects: Project[] = [
       "Deployed the backend on Render with environment-based configuration for multiple environments.",
     ],
     github: "https://github.com/Nithishwar-T/Forms",
+        architecture: [
+      { label: "React.js", detail: "Front end with client-side form validation." },
+      { label: "Express.js API", detail: "REST API with centralized error handling and consistent responses. The backend is deployed on Render with environment-based configuration." },
+      { label: "MongoDB Atlas", detail: "Persistent storage for submitted data." },
+    ],
   },  {
     slug: "ai-crime-mapper",
     title: "AI Crime Mapper",
@@ -108,6 +124,11 @@ export const projects: Project[] = [
       "Implemented biometric fingerprint login using WebAuthn and an interactive map-based React frontend.",
     ],
     // github: "https://github.com/Nithishwar-T/REPO-NAME",  // add when you have the link
+        architecture: [
+      { label: "React / Next.js", detail: "Interactive map-based frontend, with biometric fingerprint login using WebAuthn." },
+      { label: "FastAPI", detail: "Backend for NLP-based search and geospatial data filtering, with secure, efficient data retrieval." },
+      { label: "MongoDB", detail: "Document storage for the crime records." },
+    ],
   },
   {
     slug: "smart-task-workflow-management",

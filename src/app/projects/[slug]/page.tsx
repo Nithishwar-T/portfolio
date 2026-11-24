@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { FaGithub } from "react-icons/fa6";
 import { projects, getProject } from "@/data/projects";
+import { ArchitectureExplorer } from "@/components/ui/ArchitectureExplorer";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -169,6 +170,9 @@ export default async function ProjectPage({ params }: Props) {
       <Block label="What I built">
         <Bullets items={project.built} />
       </Block>
+            {project.architecture && project.architecture.length > 0 && (
+        <Block label="Architecture"><ArchitectureExplorer nodes={project.architecture} /></Block>
+      )}
 
       {/* Tech stack */}
       <Block label="Tech stack">
