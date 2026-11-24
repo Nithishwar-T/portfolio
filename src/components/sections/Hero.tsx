@@ -1,8 +1,10 @@
-import { ArrowDownRight, Download, Mail } from "lucide-react";
+import { ArrowDownRight,Mail } from "lucide-react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { profile } from "@/data/profile";
 import { Reveal } from "@/components/ui/Reveal";
 import { LocalTime } from "@/components/ui/LocalTime";
+import { ResumeButton } from "@/components/ui/ResumeButton";
+import { Magnetic } from "@/components/ui/Magnetic";
 
 const btn =
   "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors";
@@ -41,16 +43,20 @@ export function Hero() {
             ASP.NET Core and SQL Server at Kanini Software Solutions, {profile.location}.
           </p>
         </Reveal>
-        <Reveal delay={0.35} className="mt-10 flex flex-wrap gap-3">
-          <a href="#projects" className={`${btn} bg-accent text-bg hover:opacity-90`}>
-            View Projects <ArrowDownRight size={16} />
-          </a>
-          <a href={profile.resumePath} download className={`${btn} border border-line hover:border-accent hover:text-accent`}>
-            Download Resume <Download size={16} />
-          </a>
-          <a href="#contact" className={`${btn} text-muted hover:text-fg`}>
-            Contact Me <Mail size={16} />
-          </a>
+                <Reveal delay={0.35} className="mt-10 flex flex-wrap gap-3">
+          <Magnetic>
+            <a href="#projects" className={`${btn} bg-accent text-bg hover:opacity-90`}>
+              View Projects <ArrowDownRight size={16} />
+            </a>
+          </Magnetic>
+          <Magnetic>
+            <ResumeButton className={`${btn} border border-line hover:border-accent hover:text-accent`} />
+          </Magnetic>
+          <Magnetic>
+            <a href="#contact" className={`${btn} text-muted hover:text-fg`}>
+              Contact Me <Mail size={16} />
+            </a>
+          </Magnetic>
         </Reveal>
       </div>
 

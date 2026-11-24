@@ -57,3 +57,10 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Circular theme reveal: stop the default cross-fade so our clip-path animation shows */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

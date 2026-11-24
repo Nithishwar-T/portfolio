@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { profile } from "@/data/profile";
 import { cn } from "@/lib/utils";
-
+import { useActiveSection } from "@/lib/useActiveSection";
 const links = [
   { label: "Home", href: "/#home" },
   { label: "About", href: "/#about" },
@@ -14,10 +14,12 @@ const links = [
   { label: "Publications", href: "/#publications" },
   { label: "Contact", href: "/#contact" },
 ];
+const sectionIds = links.map((l) => l.href.replace("/#", ""));
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const active = useActiveSection(sectionIds);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -48,14 +50,30 @@ export function Navbar() {
           {profile.name}<span className="text-accent">_</span>
         </a>
 
-        <ul className="hidden items-center gap-7 md:flex">
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="text-sm text-muted transition-colors hover:text-fg">
-                {l.label}
-              </a>
-            </li>
-          ))}
+                <ul className="hidden items-center gap-7 md:flex">
+          {links.map((l) => {
+            const isActive = active === l.href.replace("/#", "");
+            return (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  aria-current={isActive ? "true" : undefined}
+                  className={cn(
+                    "text-sm transition-colors hover:text-fg",
+                    isActive ? "text-fg" : "text-muted"
+                  )}
+                >
+                  {l.label}
+                  <span
+                    className={cn(
+                      "mt-0.5 block h-px bg-accent transition-all",
+                      isActive ? "w-full" : "w-0"
+                    )}
+                  />
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="flex items-center gap-3">
