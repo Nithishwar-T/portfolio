@@ -5,6 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { LocalTime } from "@/components/ui/LocalTime";
 import { ResumeButton } from "@/components/ui/ResumeButton";
 import { Magnetic } from "@/components/ui/Magnetic";
+import { Scramble } from "@/components/ui/Scramble";
 
 const btn =
   "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-colors";
@@ -31,7 +32,7 @@ export function Hero() {
         </Reveal>
         <Reveal delay={0.15}>
           <p className="mt-6 font-mono text-sm uppercase tracking-widest text-muted">
-            {profile.title} · C# · Angular · React · SQL
+           <Scramble text={`${profile.title} · C# · Angular · React · SQL`} />
           </p>
         </Reveal>
         <Reveal delay={0.25}>

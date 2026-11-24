@@ -9,6 +9,7 @@ import {
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { CommandPalette } from "@/components/ui/CommandPalette";
 
 const sans = Inter_Tight({
   subsets: ["latin"],
@@ -82,6 +83,7 @@ export default function RootLayout({
         </a>
 
         <Navbar />
+         <CommandPalette />
         {children}
         <Footer />
       </body>

@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { profile } from "@/data/profile";
 import { cn } from "@/lib/utils";
 import { useActiveSection } from "@/lib/useActiveSection";
+import { Menu, Search, X } from "lucide-react";
 const links = [
   { label: "Home", href: "/#home" },
   { label: "About", href: "/#about" },
@@ -77,6 +77,15 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
+                    <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event("open-palette"))}
+            aria-label="Open command menu"
+            title="Search (Ctrl+K)"
+            className="grid size-9 place-items-center rounded-full border border-line text-muted transition-colors hover:border-accent hover:text-accent"
+          >
+            <Search size={16} />
+          </button>
           <ThemeToggle />
           <button
             className="grid size-9 place-items-center rounded-full border border-line md:hidden"
