@@ -41,12 +41,20 @@ export function BeyondCode() {
                   <li key={t} className="flex gap-3"><span className="text-accent">—</span><span>{t}</span></li>
                 ))}
               </ul>
-              {e.orgUrl && (
-                <a href={e.orgUrl} target="_blank" rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-1 text-sm text-accent hover:underline">
-                  Visit community page <ArrowUpRight size={14} aria-hidden />
-                </a>
-              )}
+                            <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                {e.orgUrl && (
+                  <a href={e.orgUrl} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-accent hover:underline">
+                    Visit community page <ArrowUpRight size={14} aria-hidden />
+                  </a>
+                )}
+                {e.proof && (
+                  <a href={e.proof.href} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-accent hover:underline">
+                    {e.proof.label} <ArrowUpRight size={14} aria-hidden />
+                  </a>
+                )}
+              </div>
             </details>
           </Reveal>
         ))}

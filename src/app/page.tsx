@@ -9,6 +9,7 @@ import { Contact } from "@/components/sections/Contact";
 import { QuickFacts } from "@/components/sections/QuickFacts";
 import { BeyondCode } from "@/components/sections/BeyondCode";
 import { GithubActivity } from "@/components/sections/GithubActivity";
+import { ProblemSolving } from "@/components/sections/ProblemSolving";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
+      <ProblemSolving />
       <Experience />
       <Education />
       <Publications />

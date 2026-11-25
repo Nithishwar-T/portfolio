@@ -7,6 +7,7 @@ export type EventEntry = {
   date?: string; // TODO(owner): add the real date, e.g. "Sep 2025". Hidden until set.
   summary: string;
   topics: string[];
+ proof?: { label: string; href: string }; // TODO(owner): certificate or photo, e.g. { label: "View certificate", href: "/events/d3-fantastic4.jpg" }
 };
 
 export const events: EventEntry[] = [

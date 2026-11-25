@@ -1,3 +1,12 @@
+export type CaseStudy = {
+  sample?: boolean; // delete this line once all four texts are your real words
+  problem: string;
+  solution: string;
+  challenges: string;
+  learned: string;
+};
+export type Shot = { src: string; alt: string; caption?: string; sample?: boolean };
+
 export type Project = {
   slug: string;
   title: string;
@@ -10,11 +19,9 @@ export type Project = {
   built: string[];
   github?: string;
   liveUrl?: string;                          // add when deployed; hidden if empty
-  problem?: string;                          // optional sections render only if filled
-  solution?: string;
-  challenges?: string;
-  screenshots?: { src: string; alt: string }[]; // put images in public/projects/
-    architecture?: { label: string; detail: string }[]; // renders the clickable architecture diagram
+  caseStudy?: CaseStudy;
+ screenshots?: Shot[]; // put images in public/projects/
+  architecture?: { label: string; detail: string }[]; // renders the clickable architecture diagram
   
 };
 
@@ -46,6 +53,21 @@ export const projects: Project[] = [
       { label: "ASP.NET Core Web API", detail: "Secured API with JWT authentication, refresh token support and ownership-based authorization checks that mitigate IDOR risks." },
       { label: "SQL Server", detail: "Entity models for trips, collaborators and destinations, supporting ordered, multi-day itineraries." },
     ],
+        caseStudy: {
+      sample: true, // TODO(owner): replace the text, then delete this line
+      problem:
+        "Group trips are hard to plan when destinations, order and collaborators are spread across messages and notes. This project keeps trips, destinations and collaborators in one structured place, with different permissions for travelers, content curators and admins.",
+      solution:
+        "Ordered, multi-day itineraries are modelled as trips with destinations and collaborators. An Angular front end uses a secured ASP.NET Core Web API, with JWT authentication, refresh tokens and ownership checks.",
+      challenges:
+        "[Replace: describe how you found and fixed the IDOR risk, and how you tested that users can only reach their own data.]",
+      learned: "[Replace: 1–2 sentences on what you learned about authorization and token handling.]",
+    },
+    screenshots: [
+      { sample: true, src: "/projects/travel-1.png", alt: "Itinerary creation screen", caption: "Itinerary creation" },
+      { sample: true, src: "/projects/travel-2.png", alt: "Destination management screen", caption: "Destination management" },
+      { sample: true, src: "/projects/travel-3.png", alt: "Admin or curator view", caption: "Admin / curator view" },
+    ],
   },
   {
     slug: "smartbus",
@@ -75,6 +97,22 @@ export const projects: Project[] = [
       { label: "ASP.NET Core Web API", detail: "REST endpoints secured with JWT authentication, enforcing role-based authorization for passengers and administrators." },
       { label: "SQL Server", detail: "Relational storage for the booking data." },
     ],
+        caseStudy: {
+      sample: true, // TODO(owner): replace the text, then delete this line
+      problem:
+        "Booking a bus seat involves several steps: finding a bus, choosing a seat, booking and keeping the ticket. This project puts that whole journey in one application, with separate access for passengers and administrators.",
+      solution:
+        "An Angular front end talks to a secured ASP.NET Core Web API backed by SQL Server. Role-based authorization keeps passenger and administrator features separate.",
+      challenges:
+        "[Replace: describe one real difficulty, for example how seat availability or booking conflicts were handled, and how you debugged it.]",
+      learned: "[Replace: 1–2 sentences on what this project taught you about full-stack design.]",
+    },
+    screenshots: [
+      { sample: true, src: "/projects/smartbus-1.png", alt: "Bus search results", caption: "Bus search" },
+      { sample: true, src: "/projects/smartbus-2.png", alt: "Seat selection screen", caption: "Seat selection" },
+      { sample: true, src: "/projects/smartbus-3.png", alt: "Generated invoice", caption: "Invoice" },
+    ],
+    
   },
   {
     slug: "mern-form-submission-system",
@@ -129,6 +167,21 @@ export const projects: Project[] = [
       { label: "FastAPI", detail: "Backend for NLP-based search and geospatial data filtering, with secure, efficient data retrieval." },
       { label: "MongoDB", detail: "Document storage for the crime records." },
     ],
+        caseStudy: {
+      sample: true, // TODO(owner): replace the text, then delete this line
+      problem:
+        "Investigators sift through large amounts of crime records using exact keywords, which makes it hard to find related cases or patterns.",
+      solution:
+        "A web app with natural-language search and geospatial filtering over MongoDB records through a FastAPI backend, with an interactive map and biometric fingerprint login using WebAuthn.",
+      challenges:
+        "[Replace: describe only what you actually built, for example how you handled misspelled or vague search queries, or setting up WebAuthn.]",
+      learned: "[Replace: 1–2 sentences on what you learned.]",
+    },
+    screenshots: [
+      { sample: true, src: "/projects/crime-mapper-1.png", alt: "Search with filters", caption: "Search and filters" },
+      { sample: true, src: "/projects/crime-mapper-2.png", alt: "Map view", caption: "Map view" },
+      { sample: true, src: "/projects/crime-mapper-3.png", alt: "Fingerprint login", caption: "Fingerprint login" },
+    ],  
   },
   {
     slug: "smart-task-workflow-management",
